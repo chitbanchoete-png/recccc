@@ -1,0 +1,682 @@
+
+/* ==========================================
+   COLOR VARIABLES
+========================================== */
+:root {
+    --primary-color: #8B0000;
+    --logo-blue: #6bbeda;
+
+    --bg-main: #1a1a1a;
+    --bg-secondary: #ffffff;
+    --bg-hero: #8B0000;
+    --bg-footer: #6bbeda;
+
+    --text-main: #1a1a1a;
+    --text-muted: #ffffff;
+}
+
+/* ==========================================
+   GLOBAL & FONT STYLES
+========================================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   BACKGROUND CLASSES
+========================================== */
+.bg-theme-secondary {
+    background-color: var(--bg-secondary) !important;
+}
+
+.bg-theme-footer {
+    background-color: var(--bg-footer) !important;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+========================================== */
+.site-header {
+    width: 100%;
+    background-color: #000000 !important;
+    z-index: 1030;
+}
+
+.site-header .navbar {
+    width: 100%;
+    background-color: #000000;
+}
+
+.site-header .navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ==========================================
+   BRAND LOGO
+========================================== */
+.site-header .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+/* ป้องกันโลโก้ขยายใหญ่เต็มหน้าจอ */
+.site-header .brand-logo {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    max-width: 40px;
+    max-height: 40px;
+
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* คำว่า Book */
+.brand-name {
+    font-size: 1.5rem;
+    color: #ffffff !important;
+    white-space: nowrap;
+}
+
+.navbar-brand span {
+    letter-spacing: 0.5px;
+}
+
+/* คำว่า PLUS */
+.brand-name .text-logo-blue {
+    color: var(--logo-blue) !important;
+}
+
+/* ==========================================
+   NAVIGATION MENU
+========================================== */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    width: auto;
+    margin-left: auto;
+    gap: 24px;
+}
+
+.nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav-menu .nav-link {
+    color: #ffffff;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--logo-blue) !important;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+
+    min-height: calc(100vh - 72px);
+    min-height: calc(100svh - 72px);
+
+    padding: 20px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg-hero);
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    scroll-margin-top: 0;
+}
+
+/* ==========================================
+   BOOK COVER
+========================================== */
+.book-cover {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    max-height: 60svh;
+    height: auto;
+
+    object-fit: contain;
+    margin: 0 auto;
+
+    transition: transform 0.3s ease;
+}
+
+.book-cover:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================
+   HERO TITLE
+========================================== */
+.hero-title {
+    font-family: "Chonburi", serif;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.4;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   HERO BADGE
+========================================== */
+.hero-badge {
+    display: inline-block;
+    max-width: 100%;
+
+    color: #ffffff;
+    font-family: "Kodchasan", sans-serif;
+    font-size: clamp(0.85rem, 1.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.6;
+
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+/* ==========================================
+   OTHER TEXT STYLES
+========================================== */
+.mama {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 55px;
+}
+
+.sk {
+    color: #ffffff;
+}
+
+.ms {
+    color: #8B0000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.mf {
+    color: #ff2400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.dexter {
+    color: #ffc141;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 55px;
+}
+
+.lovegay {
+    color: #ffc141;
+}
+
+/* ==========================================
+   FEATURE CARDS & CONTENT SECTIONS
+========================================== */
+.section-title {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.feature-card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.border-theme {
+    border: 2px solid var(--primary-color);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+.footer-quote {
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+/* ==========================================
+   FONT CLASSES
+========================================== */
+.kodchasan-regular {
+    font-family: "Kodchasan", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.chonburi-regular {
+    font-family: "Chonburi", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.chonburi {
+    font-family: "Chonburi", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ==========================================
+   TABLET (MD)
+   768px - 991.98px
+========================================== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .nav-menu {
+        gap: 16px;
+    }
+
+    .nav-menu .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .book-cover {
+        max-width: 280px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-badge {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================
+   MOBILE (SM / XS)
+   ต่ำกว่า 768px
+========================================== */
+@media (max-width: 767.98px) {
+
+    .site-header .navbar .container-fluid {
+        justify-content: space-between;
+    }
+
+    .nav-menu {
+        width: auto;
+        margin-left: auto;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .nav-menu .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .hero-section {
+        min-height: calc(100svh - 110px);
+        padding: 15px 0;
+    }
+
+    .book-cover {
+        max-width: 200px;
+        max-height: 35svh;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px !important;
+        text-align: center;
+    }
+
+    .hero-badge {
+        font-size: 0.85rem;
+        text-align: center;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .footer-quote {
+        font-size: 1.15rem !important;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+   ต่ำกว่า 576px
+========================================== */
+@media (max-width: 575.98px) {
+
+    .site-header .navbar .container-fluid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .nav-menu .nav-link {
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================
+   EXTRA SMALL MOBILE
+   ต่ำกว่า 375px
+========================================== */
+@media (max-width: 375px) {
+
+    .brand-name {
+        font-size: 1.25rem;
+    }
+
+    .nav-menu {
+        gap: 10px;
+    }
+
+    .nav-menu .nav-link {
+        font-size: 0.75rem;
+    }
+
+    .book-cover {
+        max-width: 160px;
+    }
+
+    .hero-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ==========================================
+   BOOK COVER RESPONSIVE
+========================================== */
+
+.book-cover-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-cover {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.book-cover:hover {
+    transform: translateY(-5px);
+}
+
+/* LG: 992px ขึ้นไป */
+@media (min-width: 992px) {
+    .book-cover {
+        max-width: 480px;
+    }
+}
+
+/* MD: 768px - 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .book-cover {
+        max-width: 400px;
+    }
+}
+
+/* SM / XS: ต่ำกว่า 768px */
+@media (max-width: 767.98px) {
+    .book-cover {
+        max-width: 300px;
+    }
+}
+
+
+/* ==========================================
+   HERO SECTION - BUTTON & LAYOUT
+========================================== */
+
+.hero-section {
+    position: relative;
+    padding-bottom: 135px;
+}
+
+/* ข้อความอยู่กึ่งกลางคอลัมน์ */
+.hero-content {
+    width: 100%;
+    text-align: center;
+}
+
+/* รูปหนังสืออยู่กึ่งกลาง */
+.book-cover-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ปุ่มด้านล่างเหนือเมฆ */
+.hero-bottom-btn {
+    position: absolute;
+
+    bottom: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: max-content;
+    max-width: calc(100% - 32px);
+    min-height: 52px;
+    padding: 12px 28px;
+
+    background-color: #6BBEDA;
+    color: #000000;
+
+    border: 2px solid #6BBEDA;
+    border-radius: 50px;
+
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    box-shadow: 0 5px 20px rgba(107, 190, 218, 0.4);
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Hover */
+.hero-bottom-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+
+    transform: translateX(-50%) translateY(-5px);
+
+    box-shadow: 0 8px 25px rgba(107, 190, 218, 0.5);
+}
+
+/* Keyboard focus */
+.hero-bottom-btn:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ป้องกัน Navbar บังหัวข้อ Section */
+#content1 {
+    scroll-margin-top: 90px;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+/* MD และ SM */
+@media (max-width: 991.98px) {
+
+    .hero-section {
+        padding-bottom: 120px;
+    }
+
+    .hero-bottom-btn {
+        bottom: 45px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+
+    .hero-bottom-btn {
+        bottom: 30px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+}
+/* ตัวครอบหลัก (กำหนดมุมมอง 3D) */
+.carousel-container {
+  width: 100%;
+  height: 400px; /* ปรับความสูงตามต้องการ */
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* โค้ดเดิมของคุณ */
+.carousel-track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* จัดแต่งแต่ละภาพ */
+.carousel-item {
+  position: absolute;
+  width: 200px;  /* ปรับขนาดความกว้างภาพ */
+  height: 250px; /* ปรับขนาดความสูงภาพ */
+  /* คำนวณมุมหมุน: 360 / 5 = 72deg ต่อภาพ */
+  transform: rotateY(calc((var(--i) - 1) * 72deg)) translateZ(250px); 
+  /* ปรับค่า translateZ(250px) เพื่อขยายหรือลดรัศมีวงกลม */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+/* 1. คอนเทนเนอร์หลัก กำหนดมุมมอง 3D */
+.carousel-container {
+  width: 100%;
+  height: 450px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 2. โค้ดแทร็กเดิมของคุณ + เพิ่ม Animation หมุนอัตโนมัติ */
+.carousel-track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: spinCarousel 15s linear infinite; /* หมุนวนรอบตัวเอง (ปรับเวลาเร็ว-ช้าได้ที่ 15s) */
+}
+
+/* เอาเมาส์ชี้แล้วหยุดหมุนชั่วคราว */
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* 3. จัดแต่งแต่ละภาพ (กระจาย 5 ภาพ: 360 / 5 = 72deg) */
+.carousel-item-custom {
+  position: absolute;
+  width: 220px;
+  height: 280px;
+  transform: rotateY(calc((var(--i) - 1) * 72deg)) translateZ(280px); /* ปรับระยะห่างวงกลมที่ translateZ */
+}
+
+.carousel-item-custom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* 4. คีย์เฟรมสำหรับการหมุนรอบ */
+@keyframes spinCarousel {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
